@@ -1,0 +1,68 @@
+.room {
+height: 300px;
+display: none;
+margin-top: 20px;
+border: 1px solid #000;
+}
+.room img {
+float: right;
+padding: 25px;
+width: 400px;
+height: 250px;
+}
+#single {
+  margin-top: -200px;
+}
+#double {
+margin-top: -200px;
+}
+#queen {
+  margin-top: -200px;
+}
+#king {
+  margin-top: -200px;
+}
+#doublequeen {
+  margin-top: -200px;
+}
+#doubleking {
+  margin-top: -200px;
+}
+#suite {
+  margin-top: -200px;
+}
+#presidential {
+  margin-top: -200px;
+}
+#description1 {
+  width: 650px;
+  height: 200px;
+}
+#description2 {
+  width: 650px;
+  height: 200px;
+}
+#description3 {
+  width: 650px;
+  height: 200px;
+}
+#description4 {
+  width: 650px;
+  height: 200px;
+}
+#description5 {
+  width: 650px;
+  height: 200px;
+}
+#description6 {
+  width: 650px;
+  height: 200px;
+}
+#description7 {
+  width: 650px;
+  height: 200px;
+}
+#description8 {
+  width: 650px;
+  height: 200px;
+}

@@ -1,0 +1,74 @@
+CREATE DATABASE hotel;
+CREATE TABLE customer (
+  Fname varchar(20) NOT NULL,
+  Lname varchar(20) NOT NULL,
+  Email varchar(80) NOT NULL,
+  Username varchar(40) NOT NULL,
+  Password varchar(20) NOT NULL,
+  Address varchar(500) NOT NULL,
+  Card_no char(16) NOT NULL,
+  License_no char(8) NOT NULL
+); 
+
+
+CREATE TABLE employee (
+  EmployeeID char(8) NOT NULL,
+  Password varchar(20) NOT NULL
+);
+
+
+CREATE TABLE interacts_with (
+  EmpID char(8) NOT NULL,
+  User varchar(40) NOT NULL,
+  Service varchar(1000) NOT NULL
+); 
+
+
+CREATE TABLE reserves (
+  User_name varchar(40) NOT NULL,
+  Room_no char(3) NOT NULL,
+  Start_date date NOT NULL,
+  End_date date NOT NULL
+); 
+
+CREATE TABLE room (
+  Number char(3) NOT NULL,
+  Vacancy set('Yes','No') NOT NULL,
+  Price decimal(5,2) NOT NULL,
+  Type set('Single','Double','Queen','King','Double_Queen','Double_King','Suite','Presidential') NOT NULL,
+  Description text NOT NULL
+);
+
+INSERT INTO room (Number, Vacancy, Price, Type, Description) VALUES
+('123', 'Yes', '125.00', 'Single', 'Single twin bed with a loveseat, a desk, and a television.'),
+('156', 'Yes', '125.00', 'Single', 'Single twin bed with a loveseat, a desk, and a television.'),
+('234', 'Yes', '150.00', 'Double', 'Two twin beds with a couch, a desk, and a television.'),
+('346', 'Yes', '175.00', 'Queen', 'One queen bed with a loveseat, a desk, and a television.'),
+('455', 'Yes', '125.00', 'Single', 'Single twin bed with a loveseat, a desk, and a television.'),
+('456', 'Yes', '200.00', 'King', 'One king bed with a loveseat, a mini refrigerator, a desk, and a television.'),
+('545', 'Yes', '150.00', 'Double', 'Two twin beds with a couch, a desk, and a television.'),
+('567', 'Yes', '275.00', 'Double_Queen', 'Two queen beds with a couch, a mini refrigerator, a desk, and two televisions.'),
+('678', 'Yes', '325.00', 'Double_King', 'Two king beds with two couches, a mini refrigerator, two desks, and two televisions.'),
+('789', 'Yes', '400.00', 'Suite', 'Two separate rooms connected together. Each room has two twin beds, a loveseat, and a television. There is also a living room with a television, a large couch, a mini refrigerator, and a desk.'),
+('890', 'Yes', '800.00', 'Presidential', 'The most luxurious room. King bed, television, and walk-in closet in the master bedroom. Living room with several couches, a fireplace, a television, and dining table.');
+
+ALTER TABLE customer
+  ADD PRIMARY KEY (Username);
+
+
+ALTER TABLE employee
+  ADD PRIMARY KEY (EmployeeID);
+
+  
+ALTER TABLE interacts_with
+  ADD KEY EmpID (EmpID),
+  ADD KEY User (User);
+
+  
+ALTER TABLE reserves
+  ADD KEY User_name (User_name),
+  ADD KEY Room_no (Room_no);
+
+
+ALTER TABLE room
+  ADD PRIMARY KEY (Number);
